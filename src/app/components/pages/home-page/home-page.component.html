@@ -1,0 +1,103 @@
+<section class="services sec-width" id="services">
+  <div class="title">
+    <h2>services</h2>
+  </div>
+  <div class="services-container">
+    <!-- single service -->
+    <article class="service">
+      <div class="service-icon">
+        <span>
+          <i class="fas fa-utensils"></i>
+        </span>
+      </div>
+      <div class="service-content">
+        <h2>Food Service/ Food Runner</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias blanditiis tempore officia accusamus
+          asperiores. Illum maxime eligendi necessitatibus laudantium iste nisi pariatur doloremque ut illo similique
+          voluptatum enim distinctio perferendis, ad ipsam aspernatur omnis rem autem ex, reiciendis corporis suscipit!
+        </p>
+        <button type="button" class="btn">Know More</button>
+      </div>
+    </article>
+    <!-- end of single service -->
+    <!-- single service -->
+    <article class="service">
+      <div class="service-icon">
+        <span>
+          <i class="fas fa-swimming-pool"></i>
+        </span>
+      </div>
+      <div class="service-content">
+        <h2>Refreshment</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias blanditiis tempore officia accusamus
+          asperiores. Illum maxime eligendi necessitatibus laudantium iste nisi pariatur doloremque ut illo similique
+          voluptatum enim distinctio perferendis, ad ipsam aspernatur omnis rem autem ex, reiciendis corporis suscipit!
+        </p>
+        <button type="button" class="btn">Know More</button>
+      </div>
+    </article>
+    <!-- end of single service -->
+    <!-- single service -->
+    <article class="service">
+      <div class="service-icon">
+        <span>
+          <i class="fas fa-broom"></i>
+        </span>
+      </div>
+      <div class="service-content">
+        <h2>Housekeeping</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias blanditiis tempore officia accusamus
+          asperiores. Illum maxime eligendi necessitatibus laudantium iste nisi pariatur doloremque ut illo similique
+          voluptatum enim distinctio perferendis, ad ipsam aspernatur omnis rem autem ex, reiciendis corporis suscipit!
+        </p>
+        <button type="button" class="btn">Know More</button>
+      </div>
+    </article>
+    <!-- end of single service -->
+    <!-- single service -->
+    <article class="service">
+      <div class="service-icon">
+        <span>
+          <i class="fas fa-door-closed"></i>
+        </span>
+      </div>
+      <div class="service-content">
+        <h2>Room Security</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias blanditiis tempore officia accusamus
+          asperiores. Illum maxime eligendi necessitatibus laudantium iste nisi pariatur doloremque ut illo similique
+          voluptatum enim distinctio perferendis, ad ipsam aspernatur omnis rem autem ex, reiciendis corporis suscipit!
+        </p>
+        <button type="button" class="btn">Know More</button>
+      </div>
+    </article>
+    <!-- end of single service -->
+  </div>
+</section>
+
+<div class="book">
+  <form class="book-form">
+    <div class="form-item">
+      <label for="checkin-date">Check In Date: </label>
+      <input type="date" id="chekin-date" name="chekin-date" [(ngModel)]="booking.arrivalDate">
+    </div>
+    <div class="form-item">
+      <label for="checkout-date">Check Out Date: </label>
+      <input type="date" id="chekout-date" name="chekout-date" [(ngModel)]="booking.checkoutDate">
+    </div>
+    <div class="form-item">
+      <label for="adult">Adults: </label>
+      <input type="number" min="1" value="1" id="adult" name="adult" [(ngModel)]="booking.adultsNb">
+    </div>
+    <div class="form-item">
+      <label for="children">Children: </label>
+      <input type="number" min="1" value="1" id="children" name="children" [(ngModel)]="booking.childsNb">
+    </div>
+    <div class="form-item">
+      <label for="rooms">Rooms: </label>
+      <input type="number" min="1" value="1" id="rooms" name="rooms" [(ngModel)]="booking.roomsNb">
+    </div>
+    <div class="form-item">
+      <input type="submit" class="btn" value="Book Now" (click)="book()">
+    </div>
+  </form>
+</div>
