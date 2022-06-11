@@ -1,0 +1,23 @@
+<section class = "rooms sec-width" id = "rooms">
+  <div class = "title">
+      <h2>rooms</h2>
+  </div>
+  <div class = "rooms-container" *ngFor="let room of rooms">
+      <!-- single room -->
+      <article class = "room">
+          <div class = "room-image">
+              <img src = "assets/images/img1.jpg" alt = "room image">
+          </div>
+          <div class = "room-text">
+              <h3>{{ room.title }}</h3>
+              <p>{{ room.description }}</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus exercitationem repellendus maxime ullam tempore architecto provident unde expedita quam beatae, dolore eligendi molestias sint tenetur incidunt voluptas. Unde corporis qui iusto vitae. Aut nesciunt id iste, cum esse commodi nemo?</p>
+              <p class = "rate">
+                  <span>{{ room.price }} TND /</span> Per Night
+              </p>
+              <button type = "button" class = "btn">book now</button>
+          </div>
+      </article>
+      <!-- end of single room -->
+  </div>
+</section>
