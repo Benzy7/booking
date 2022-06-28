@@ -1,0 +1,92 @@
+<div class="container-lg">
+  <div class="table-responsive">
+      <div class="table-wrapper">
+          <div class="table-title">
+              <div class="row">
+                  <div class="col-sm-8"><h2>Hotels <b>Details</b></h2></div>
+                  <div class="col-sm-4">
+                      <button type="button" class="btn btn-info add-new" (click)="addRoom()"><i class="fa fa-plus"></i> Add</button>
+                  </div>
+              </div>
+          </div>
+          <table class="table table-bordered">
+              <thead>
+                  <tr>
+                      <th>title</th>
+                      <th>description</th>
+                      <th>type</th>
+                      <th>price</th>
+                      <th>available</th>
+                      <th>availableDate</th>
+                      <th>hotel</th>
+                      <th>Actions</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let room of rooms; let i = index">
+                      <td>
+                        <ng-container *ngIf="hotelEdit == i; else elseName">
+                          <input type="text" class="form-control" [(ngModel)]="room.title">
+                        </ng-container>
+                        <ng-template #elseName>
+                          {{ room.title }}
+                        </ng-template>
+                      </td>
+                      <td>
+                        <ng-container *ngIf="hotelEdit == i; else elseDescription">
+                          <input type="text" class="form-control" [(ngModel)]="room.description">
+                        </ng-container>
+                        <ng-template #elseDescription>
+                          {{ room.description }}
+                        </ng-template>
+                      </td>
+                      <td>
+                        <ng-container *ngIf="hotelEdit == i; else elseAdresse">
+                          <input type="text" class="form-control" [(ngModel)]="room.type">
+                        </ng-container>
+                        <ng-template #elseAdresse>
+                          {{ room.type }}
+                        </ng-template>
+                      </td>
+                      <td>
+                        <ng-container *ngIf="hotelEdit == i; else elseNbrooms">
+                          <input type="number" class="form-control" [(ngModel)]="room.price">
+                        </ng-container>
+                        <ng-template #elseNbrooms>
+                          {{ room.price }}
+                        </ng-template>
+                      </td>
+                      <td>
+                        <ng-container *ngIf="hotelEdit == i; else elseNbetoiles1">
+                          <input type="number" class="form-control" [(ngModel)]="room.available" min="1" max="5">
+                        </ng-container>
+                        <ng-template #elseNbetoiles1>
+                          {{ room.available }}
+                        </ng-template>
+                      </td>
+                      <td>
+                        <ng-container *ngIf="hotelEdit == i; else elseNbetoiles2">
+                          <input type="number" class="form-control" [(ngModel)]="room.availableDate" min="1" max="5">
+                        </ng-container>
+                        <ng-template #elseNbetoiles2>
+                          {{ room.availableDate }}
+                        </ng-template>
+                      </td>
+                      <td>
+                        <ng-container *ngIf="hotelEdit == i; else elseNbetoiles3">
+                          <input type="number" class="form-control" [(ngModel)]="room.hotel" min="1" max="5">
+                        </ng-container>
+                        <ng-template #elseNbetoiles3>
+                          {{ room.hotel }}
+                        </ng-template>
+                      </td>
+                      <td>
+                          <a class="edit" title="Edit" data-toggle="tooltip" (click)="toogleEdit(i)"><i class="fa fa-pencil-square"></i></a>
+                          <a class="delete" title="Delete" data-toggle="tooltip" (click)="deleteRoom(i, room.id)"><i class="fa fa-trash"></i></a>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>

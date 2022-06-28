@@ -1,24 +1,36 @@
 <div class="book">
   <form class="book-form">
     <div class="form-item">
-      <label for="checkin-date">Check In Date: </label>
-      <input type="date" id="chekin-date" name="chekin-date" [(ngModel)]="booking.arrivalDate">
+      <label for="checkin-date">Date arrivé: </label>
+      <input type="date" id="chekin-date" name="chekin-date" [(ngModel)]="reservation.date_arrive">
     </div>
     <div class="form-item">
-      <label for="checkout-date">Check Out Date: </label>
-      <input type="date" id="chekout-date" name="chekout-date" [(ngModel)]="booking.checkoutDate">
+      <label for="checkout-date">Date Départ: </label>
+      <input type="date" id="chekout-date" name="chekout-date" [(ngModel)]="reservation.date_depart">
     </div>
     <div class="form-item">
-      <label for="adult">Adults: </label>
-      <input type="number" min="1" value="1" id="adult" name="adult" [(ngModel)]="booking.adultsNb">
+      <label for="tel">Tel: </label>
+      <input type="text" id="tel" name="tel" [(ngModel)]="reservation.phone">
     </div>
     <div class="form-item">
-      <label for="children">Children: </label>
-      <input type="number" min="1" value="1" id="children" name="children" [(ngModel)]="booking.childsNb">
+      <label for="nbpersons">Nombre de persones: </label>
+      <input type="nbpersons" min="1" value="1" id="adult" name="adult" [(ngModel)]="reservation.nb_persons">
     </div>
     <div class="form-item">
-      <label for="rooms">Rooms: </label>
-      <input type="number" min="1" value="1" id="rooms" name="rooms" [(ngModel)]="booking.roomsNb">
+      <label for="hotels">Hotel: </label>
+      <select name="hotels" id="hotels"  [(ngModel)]="hotelSelected" (change)="getRooms()">
+        <option *ngFor="let hotel of hotels" [value]="hotel.id" >{{hotel.name}}</option>
+      </select>
+    </div>
+    <div class="form-item">
+      <label for="rooms">Chambre : </label>
+      <select name="rooms" id="rooms" multiple  [(ngModel)]="reservation.rooms_ids">
+        <option *ngFor="let room of rooms" [value]="room.id">{{room.title}}</option>
+      </select>
+    </div>
+    <div class="form-item">
+      <label for="nbrooms">Nombre de chambres: </label>
+      <input type="number" min="1" value="1" id="nbrooms" name="nbrooms" [(ngModel)]="reservation.nb_rooms">
     </div>
     <div class="form-item">
       <input type="submit" class="btn" value="Book Now" (click)="book()">

@@ -11,7 +11,7 @@
 
     <div class = "head-bottom flex">
         <h2>ENDROIT  AGRÉABLE  ET CONFORTABLE  POUR  SEJOUR</h2>
-        <p>Vous pouvez désormais réserver en ligne votre hôtel Tunisie en dinars avec ou sans carte bancaire.
+        <p class="white-text">Vous pouvez désormais réserver en ligne votre hôtel Tunisie en dinars avec ou sans carte bancaire.
             En quelques clics seulement, il vous suffit d’utiliser notre moteur pour trouver les établissements disponibles à vos dates, sélectionner le meilleur hôtel Tunisie qui répond à vos exigences et remplir le formulaire.</p>
         <button type = "button" class = "head-btn" routerLink="/hotels">VOIR LES HÔTELS</button>
     </div>
@@ -28,10 +28,10 @@
       <li><a [routerLink]="'/'">Accueil</a></li>
       <li><a [routerLink]="'/hotels'">Les hôtels</a></li>
       <li><a [routerLink]="'/rooms'">Les chambres</a></li>
-      
+
   </ul>
-  <button class = "btn sign-up">Inscrire</button>
-  <button class = "btn log-in">Connecter</button>
+  <button [routerLink]="'/auth/login'" class = "btn sign-up">Inscrire</button>
+  <button [routerLink]="'/auth/inscri'" class = "btn log-in">Connecter</button>
 </div>
 <!-- end of side navbar -->
 

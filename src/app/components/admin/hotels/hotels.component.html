@@ -1,0 +1,75 @@
+<div class="container-lg">
+  <div class="table-responsive">
+      <div class="table-wrapper">
+          <div class="table-title">
+              <div class="row">
+                  <div class="col-sm-8"><h2>Hotels <b>Details</b></h2></div>
+                  <div class="col-sm-4">
+                      <button type="button" class="btn btn-info add-new" (click)="addHotel()"><i class="fa fa-plus"></i> Add</button>
+                  </div>
+              </div>
+          </div>
+          <table class="table table-bordered">
+              <thead>
+                  <tr>
+                      <th>Nom</th>
+                      <th>Description</th>
+                      <th>Adresse</th>
+                      <th>nb rooms</th>
+                      <th>nb etoiles</th>
+                      <th>Actions</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let hotel of hotels; let i = index">
+                      <td>
+                        <ng-container *ngIf="hotelEdit == i; else elseName">
+                          <input type="text" class="form-control" [(ngModel)]="hotel.name">
+                        </ng-container>
+                        <ng-template #elseName>
+                          {{ hotel.name }}
+                        </ng-template>
+                      </td>
+                      <td>
+                        <ng-container *ngIf="hotelEdit == i; else elseDescription">
+                          <input type="text" class="form-control" [(ngModel)]="hotel.description">
+                        </ng-container>
+                        <ng-template #elseDescription>
+                          {{ hotel.description }}
+                        </ng-template>
+                      </td>
+                      <td>
+                        <ng-container *ngIf="hotelEdit == i; else elseAdresse">
+                          <input type="text" class="form-control" [(ngModel)]="hotel.adresse">
+                        </ng-container>
+                        <ng-template #elseAdresse>
+                          {{ hotel.adresse }}
+                        </ng-template>
+                      </td>
+                      <td>
+                        <ng-container *ngIf="hotelEdit == i; else elseNbrooms">
+                          <input type="number" class="form-control" [(ngModel)]="hotel.nombreRooms">
+                        </ng-container>
+                        <ng-template #elseNbrooms>
+                          {{ hotel.nombreRooms }}
+                        </ng-template>
+                      </td>
+                      <td>
+                        <ng-container *ngIf="hotelEdit == i; else elseNbetoiles">
+                          <input type="number" class="form-control" [(ngModel)]="hotel.nombreEtoiles" min="1" max="5">
+                        </ng-container>
+                        <ng-template #elseNbetoiles>
+                          {{ hotel.nombreEtoiles }}
+                        </ng-template>
+                      </td>
+                      <td>
+                          <a class="edit" title="Edit" data-toggle="tooltip" (click)="toogleEdit(i)"><i class="fa fa-pencil-square"></i></a>
+                          <a class="delete" title="Delete" data-toggle="tooltip" (click)="deleteHotel(i, hotel.id)"><i class="fa fa-trash"></i></a>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
+<notifier-container></notifier-container>
